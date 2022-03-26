@@ -20,7 +20,7 @@ body {
 
 .splash-title {
   font-family: "Bangers", cursive;
-  font-size: 10rem;
+  font-size: 20vw;
 }
 
 .splash-battleship-image {
@@ -43,6 +43,7 @@ body {
   border-radius: 0.2em;
   text-decoration: none;
   color: #333;
+
 }
 
 .btn:hover, .btn:focus {
@@ -53,10 +54,16 @@ body {
 .splash-btn {
   font-size: 2rem;
   margin-left: 2rem;
+  max-width: 100%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-left: 0;
 }
 
 .splash-btn:first-child{
-  margin-left: 0;
+  margin-left: 0; 
 }
 
 
