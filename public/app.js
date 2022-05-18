@@ -1,3 +1,5 @@
+//adding event listeners to all html classes as well as ids
+
 document.addEventListener('DOMContentLoaded', () => {
     const userGrid = document.querySelector('.grid-user')
     const computerGrid = document.querySelector('.grid-computer')
