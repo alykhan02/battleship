@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let allShipsPlaced = false
     let shotFired = -1
 
-    //Ships
+    //Ships instantiate all ships with their dimensions
     const shipArray = [
       {
         name: 'destroyer',
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
       },
     ]
-      
+    // make the board for both users  
     createBoard(userGrid, userSquares)
     createBoard(computerGrid, computerSquares)
 
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
       const socket = io();
   
-      // Get your player number
+      // Get your player number and if a third player joins do not let them in (tell them the server is full)
       socket.on('player-number', num => {
         if (num === -1) {
           infoDisplay.innerHTML = "Sorry, the server is full"
@@ -121,12 +121,12 @@ document.addEventListener('DOMContentLoaded', () => {
         })
       })
   
-      // On Timeout
+      // On Timeout -> testing how this would work- functional side
       socket.on('timeout', () => {
         infoDisplay.innerHTML = 'You have reached the 10 minute limit'
       })
   
-      // Ready button click
+      // Ready button click -> functional testing I was big on using console log with onClick eventListeners
       startButton.addEventListener('click', () => {
         if(allShipsPlaced) playGameMulti(socket)
         else infoDisplay.innerHTML = "Please place all ships"
@@ -403,6 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     function checkForWins() {
+      // Display that a ship has sunk whether it was your own or the opponent's
       let enemy = 'computer'
       if(gameMode === 'multiPlayer') enemy = 'enemy'
       if (destroyerCount === 2) {
