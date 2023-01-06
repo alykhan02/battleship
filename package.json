@@ -19,7 +19,8 @@
   },
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server"
+    "dev": "nodemon server",
+    "build": "npm start"
   },
   "eslintConfig": {
     "extends": [
